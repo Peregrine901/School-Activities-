@@ -33,7 +33,7 @@ print(f"day = {time}")
 print(f"Number of Tickets = {num_of_tickets}")
 print(f'Base Price {base_ticket_price} x 6 = {base_ticket_price * 6}')
 print(f'Student Discount = {student_discount}')
-print(f'Student Discount = {(base_ticket_price * 6) * student_discount_rate}')
+print(f'Student Discount (tix amount {num_of_tickets}) = {(base_ticket_price * 6) * student_discount_rate}')
 print(f'Maritime Discount = {maritime_discount}')
 print(f'Group discount = {group_discount}')
 
@@ -43,3 +43,4 @@ print(f"Base Ticket Price: {base_ticket_price} x 6 = ")
 print(f"Final Ticket Price (after discounts): {final_price:.2f}")
 print(f"Number of Tickets: {num_of_tickets}")
 print(f"Total Cost: {total_cost:.2f}")
+
