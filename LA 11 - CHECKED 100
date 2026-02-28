@@ -1,0 +1,23 @@
+student_list = ["Rey Dau","Uth duna","Arkveld","Nu Udra","Jin Dahaad"]
+
+print(student_list)
+
+myname = input("enter your name: ")
+new_stud1 = input("Enter new student: ")
+new_stud2 = input("Enter new student: ")
+remove_stud = input("enter  the student you want to eliminate: ")
+
+student_list.append(new_stud1)
+student_list.insert(0,new_stud2)
+print(student_list)
+print("Updated Student List")
+student_list[2] = myname
+print(student_list)
+student_list.remove(remove_stud)
+print(student_list)
+student_list.pop(-1)
+print(student_list.pop(-1))
+print(student_list)
+
+
+
