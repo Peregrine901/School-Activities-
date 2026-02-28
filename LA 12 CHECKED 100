@@ -1,0 +1,19 @@
+students = [
+    ["Fatalis", 86, 89, 90],
+    ["Alatreon", 90, 87, 87],
+    ["Dire Miralis", 90, 91, 92]
+]
+
+for  i in students:
+    print(i)
+    
+new_grade = ["Safi", 95, 99, 98]
+students[2][1] = 100
+print(students)
+students.append(new_grade)
+print(students)
+
+print('STUDENT list updated')
+for i in students:
+    print(i)
+print(students[1][2])
