@@ -1,0 +1,18 @@
+c = 11
+while (c >= 1):
+    c -= 1
+    print(c)
+print("Blast Off")
+
+guessing = True
+
+while guessing:
+    attempt = 10
+    guess = int(input("Enter your guess: "))
+    if guess == attempt:
+        guessing = False
+        print("You guessed right")
+    else:
+        print("Nice try")
+        
+LA13
