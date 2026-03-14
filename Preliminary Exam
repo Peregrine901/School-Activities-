@@ -1,0 +1,69 @@
+items = [
+    [1, "Phone Stand", 30],
+    [2, "USB Cable", 25],
+    [3, "Screen Wiper", 15],
+    [4, "Earbuds", 45],
+    [5, "Webcam Cover", 20]
+]
+
+print("=== Tech Bazaar Billing System ===")
+cashier = input("Enter the cashier name: ")
+customer = input("Enter the customer name: ")
+
+print("\n--- Price List ---")
+for num, name, price in items:
+    print(f"{num}. {name} - P{price}")
+
+orders = []
+subtotal = 0
+
+for wares in range(1, 4):
+    print(f"\nOrder {wares}:")
+    item_number = int(input("Enter item number (0 to skip): "))
+    if item_number == 0:
+        continue
+    
+    
+    find = next((item for item in items if item[0] == item_number), None)
+    if find:
+        num, item_name, item_price = find
+        quantity = int(input("Enter quantity: "))
+        order_total = item_price * quantity
+        orders.append((num, item_name, quantity, order_total))
+        subtotal += order_total
+    else:
+        print("Invalid item number.")
+
+discount = 0
+if subtotal >= 100:
+    discount = subtotal * 0.10
+total = subtotal - discount
+
+print("\n--- Payment ---")
+try:
+    amount_paid = float(input("Enter amount paid: "))
+
+except ValueError:
+    print("Invalid Input. Try again.")
+
+print("\n=== Receipt ===")
+print("Booth: Tech Bazaar")
+print(f"Cashier: {cashier}")
+print(f"Customer: {customer}\n")
+
+for num, item_name, qty, order_total in orders:
+    print(f"{num}. {item_name} x{qty} = P{order_total}")
+
+print(f"\nSubtotal: P{subtotal}")
+if discount > 0:
+    print(f"Techie Discount (10%): -P{discount:.2f}")
+print(f"Total: P{total:.2f}")
+print(f"Amount Paid: P{amount_paid:.2f}")
+
+if amount_paid < total:
+    print("Payment not enough. No change computed.")
+else:
+    change = amount_paid - total
+    print(f"Change: P{change:.2f}")
+
+print("\n— End —")
